@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_caab34a6196ba525b5e43716d6020365 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_caab34a6196ba525b5e43716d6020365" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_caab34a6196ba525b5e43716d6020365 = L.map(
+                "map_caab34a6196ba525b5e43716d6020365",
+                {
+                    center: [37.7772222, -122.4111111],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 15,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_bdccc5142d70c7e0ec632173e32bb706 = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_caab34a6196ba525b5e43716d6020365);
+        
+    
+            var marker_392282e3818f3aa66a8010c674bbb3f9 = L.marker(
+                [37.783521, -122.408109],
+                {}
+            ).addTo(map_caab34a6196ba525b5e43716d6020365);
+        
+    
+            marker_392282e3818f3aa66a8010c674bbb3f9.bindTooltip(
+                `<div>
+                     Office
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_b0f27d44d458f03ca8bf38cc4962d89e = L.marker(
+                [37.776344, -122.406468],
+                {}
+            ).addTo(map_caab34a6196ba525b5e43716d6020365);
+        
+    
+            var icon_58086c828fa476b0ede405adc179b801 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "book", "iconColor": "white", "markerColor": "green", "prefix": "fa"}
+            );
+            marker_b0f27d44d458f03ca8bf38cc4962d89e.setIcon(icon_58086c828fa476b0ede405adc179b801);
+        
+    
+            marker_b0f27d44d458f03ca8bf38cc4962d89e.bindTooltip(
+                `<div>
+                     Bessie Carmichael Elementary School
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_f0e501abb81a74b772515b9371286775 = L.marker(
+                [37.764726, -122.394523],
+                {}
+            ).addTo(map_caab34a6196ba525b5e43716d6020365);
+        
+    
+            var icon_9661808e7c3bd8a5ea3f5043e665daf6 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "building", "iconColor": "white", "markerColor": "orange", "prefix": "fa"}
+            );
+            marker_f0e501abb81a74b772515b9371286775.setIcon(icon_9661808e7c3bd8a5ea3f5043e665daf6);
+        
+    
+            marker_f0e501abb81a74b772515b9371286775.bindTooltip(
+                `<div>
+                     Nearest Design company
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_1e3c18d883657674f5ec0fbba6cb2dfa = L.marker(
+                [37.785633, -122.4106],
+                {}
+            ).addTo(map_caab34a6196ba525b5e43716d6020365);
+        
+    
+            var icon_ee35b60f474274ee4db54c6638022ee4 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "car", "iconColor": "lightgray", "markerColor": "gray", "prefix": "fa"}
+            );
+            marker_1e3c18d883657674f5ec0fbba6cb2dfa.setIcon(icon_ee35b60f474274ee4db54c6638022ee4);
+        
+    
+            marker_1e3c18d883657674f5ec0fbba6cb2dfa.bindTooltip(
+                `<div>
+                     Car rental: Budget Rent A Car
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_77abc33ddae93b436d333db4792462f7 = L.marker(
+                [37.783998, -122.407206],
+                {}
+            ).addTo(map_caab34a6196ba525b5e43716d6020365);
+        
+    
+            var icon_b099ea06f64e3923b48fe7730e7901f7 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "coffee", "iconColor": "lightgray", "markerColor": "darkred", "prefix": "fa"}
+            );
+            marker_77abc33ddae93b436d333db4792462f7.setIcon(icon_b099ea06f64e3923b48fe7730e7901f7);
+        
+    
+            marker_77abc33ddae93b436d333db4792462f7.bindTooltip(
+                `<div>
+                     Starbucks
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_e5d994adf3cb5155dd660674043f1179 = L.marker(
+                [37.786373, -122.404335],
+                {}
+            ).addTo(map_caab34a6196ba525b5e43716d6020365);
+        
+    
+            var icon_836aa607bb1809070c911e9451a9863d = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "trophy", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
+            );
+            marker_e5d994adf3cb5155dd660674043f1179.setIcon(icon_836aa607bb1809070c911e9451a9863d);
+        
+    
+            marker_e5d994adf3cb5155dd660674043f1179.bindTooltip(
+                `<div>
+                     Court: Equinox Sports Club San Francisco
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_6a75996ad65474ff5c68431954c1cecb = L.marker(
+                [37.7824, -122.405048],
+                {}
+            ).addTo(map_caab34a6196ba525b5e43716d6020365);
+        
+    
+            var icon_05cd43172deae9637e5c9bdf1233c59f = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "leaf", "iconColor": "gray", "markerColor": "lightgreen", "prefix": "fa"}
+            );
+            marker_6a75996ad65474ff5c68431954c1cecb.setIcon(icon_05cd43172deae9637e5c9bdf1233c59f);
+        
+    
+            marker_6a75996ad65474ff5c68431954c1cecb.bindTooltip(
+                `<div>
+                     Vegan: Sweetgreen
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_df342afc5bac6ddad0bb74831f66d2eb = L.marker(
+                [37.790331, -122.408575],
+                {}
+            ).addTo(map_caab34a6196ba525b5e43716d6020365);
+        
+    
+            var icon_09817835fae3c6b15f3ae85f58fcebc7 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "paw", "iconColor": "lightgray", "markerColor": "darkpurple", "prefix": "fa"}
+            );
+            marker_df342afc5bac6ddad0bb74831f66d2eb.setIcon(icon_09817835fae3c6b15f3ae85f58fcebc7);
+        
+    
+            marker_df342afc5bac6ddad0bb74831f66d2eb.bindTooltip(
+                `<div>
+                     Pet grommers: Kitty Kat Pet Sitting Services
+                 </div>`,
+                {"sticky": true}
+            );
+        
+</script>
+</html>

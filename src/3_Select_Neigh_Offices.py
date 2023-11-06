@@ -31,7 +31,8 @@ def getNeighMongo(js, name_collection):
     neighborhoodsSF = db.get_collection(name_collection)
     neighborhoodsSF.insert_many(dict_neigh_rows) # -> if not already inserted
 
-def officesChosen(mongo, csv, neigh):
+def officesChosen(mongo, csv_name, neigh):
+    csv = pd.read_csv(csv_name, encoding = "unicode_escape")
     client = MongoClient("localhost:27017")
     db = client.get_database("Ironhack")
     neighborhoodsSF = db.get_collection(mongo)

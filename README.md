@@ -112,6 +112,7 @@ Coordinates and addresses of the offices in the first pages of the site scrapped
 
 
 Most of the offices for rent are located in the Financial District, followed by South Of Market (SoMa) and Mission Bay.
+
 | neighborhoods      |  count  | 
 |--------------------|---------|
 | Financial District | 137     |
@@ -119,6 +120,8 @@ Most of the offices for rent are located in the Financial District, followed by 
 | Mission Bay        | 7       |
 | Downtown           | 4       |
 | North San Jose     | 4       |
+
+As you can see, some of these neighborhoods are not from San Francisco, but from the Bay Area. This is because the site for renting in San Francisco also included some offices in the surroundings.
 
 SoMa is the most recommended neighborhood to go out and party, so I selected the **13 offices placed there**.
 
@@ -149,8 +152,8 @@ Once the office was chosen all the other requirements were checked using foursqu
 ## Conclusions
 The office is located in South Of Market (SoMa) in San Francisco. Its address is [901 Market Street, Suite 500](https://www.squarefoot.com/building/ca/san-francisco/901-market-street/e7cadee9-829c-46b9-8942-109d10b2bd28?listingId=1037813) (price inquiry required).
 
-![Building](image.png)
+![Building](images/images_for_md/image.png)
 
 Every venue is close to the office except for the design company, which is more than a kilometer away, as can be seen in the [map](images/mapa.html).
 
-![Map](image-1.png)
+![Map](images/images_for_md/image-1.png)

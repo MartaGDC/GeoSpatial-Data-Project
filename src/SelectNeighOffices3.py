@@ -13,7 +13,7 @@ def getJson(url):
     js = json.loads(info)
     return js
 
-def getNeighMongo(js, name_collection):
+def getNeighMongo(js, mongo):
     '''Only used if the collection doesn't exist'''
     neighborhoods = js["props"]["pageProps"]["queryManager"]["values"]["submarkets"][0]["neighborhoods"]
     name = [i["name"] for i in neighborhoods]
@@ -28,8 +28,31 @@ def getNeighMongo(js, name_collection):
     
     client = MongoClient("localhost:27017")
     db = client.get_database("Ironhack")
-    neighborhoodsSF = db.get_collection(name_collection)
+    neighborhoodsSF = db.get_collection(mongo)
     neighborhoodsSF.insert_many(dict_neigh_rows) # -> if not already inserted
+
+def locateOffices(mongo, csv_name):
+    csv = pd.read_csv(csv_name, encoding = "unicode_escape")
+    locations = [row["positions"] for index, row in csv.iterrows()]
+    positions = [{"type": "Point", "coordinates": i} for i in locations]
+    client = MongoClient("localhost:27017")
+    db = client.get_database("Ironhack")
+    neighborhoodsSF = db.get_collection(mongo)
+    list_neigh = []
+    for i in positions:
+        try:
+            list_neigh.append(
+                {"neighborhoods": neighborhoodsSF.find_one(
+                    {"geojson":
+                    {"$geoIntersects":
+                    {"$geometry": i}
+                    }
+                    })["name"]
+                })
+        except: # Some neightborhoods of San Francisco might not be included in the selection of renting venues
+            list_neigh.append({"neighborhoods":None})
+    print(pd.DataFrame(list_neigh).value_counts().head())
+
 
 def officesChosen(mongo, csv_name, neigh):
     csv = pd.read_csv(csv_name, encoding = "unicode_escape")
@@ -51,9 +74,3 @@ def officesChosen(mongo, csv_name, neigh):
         except:
             pass
     return(list_offices)
-
-url = "https://www.squarefoot.com/office-space/m/ca/san_francisco/1aee3919-edd5-4fad-b301-76f335aae568?minOccupancy=87&maxOccupancy=120&&activeSizeFilter=SEATS&groupByBuilding=false"
-js = getJson(url)
-# getNeighMongo(js, "neighborhoodsSF") -> if mongo collection empty or not existant
-# There was another function to decide which neighborhood to pick, cheching the density of offices and the "party" criteria
-list_offices = officesChosen("neighborhoodsSF", "data/officesSF.csv", "South Of Market")

@@ -3,14 +3,9 @@ import requests
 import json
 import pandas as pd
 import geopandas as gpd
-import folium
-from folium import Choropleth, Circle, Marker, Icon, Map
 from dotenv import load_dotenv
-import time
 import math
-import src.3_Select_Neigh_Offices as neighOff
 from pymongo import MongoClient
-
 
 
 # https://geocode.xyz/ -> This web wasn't working correctly
@@ -18,7 +13,6 @@ from pymongo import MongoClient
 def request_4sq(venue, lat, lon, radius = 3700, sort_by = "DISTANCE", limit = 20):
     load_dotenv()
     token = os.getenv("token")
-    
     url = f"https://api.foursquare.com/v3/places/search?query={venue}&ll={lat}%2C{lon}&radius={radius}&sort={sort_by}&limit={limit}"
     headers = {
         "accept": "application/json",
@@ -95,14 +89,3 @@ def getClosestDesign(design_coordinates, list_offices_updated, csv_name):
     csv = pd.read_csv(csv_name, encoding = "unicode_escape")
     print(csv[csv["positions"]== str(coordinates)])
     return coordinates
-
-
-lat = 37.7772222
-lon = -122.4111111
-load_dotenv()
-token = os.getenv("token")
-df_schools = getSchools("school", lat, lon)
-list_offices = neighOff.officesChosen("neighborhoodsSF", "data/officesSF.csv", "South Of Market")
-list_offices_updated = schoolDistance(list_offices, df_schools)
-design_coordinates = getDesgin("companies")
-office_coord = getClosestDesign(design_coordinates, list_offices_updated, "data/officesSF.csv")

@@ -49,5 +49,3 @@ def rentsCsv(urls):
     rents.to_csv("data/officesSF.csv", index=False)
 
 
-urls = [f"https://www.squarefoot.com/office-space/m/ca/san_francisco/1aee3919-edd5-4fad-b301-76f335aae568?minOccupancy=87&maxOccupancy=120&page={i}&activeSizeFilter=SEATS&groupByBuilding=false" for i in range(1,9)]
-rentsCsv(urls)

@@ -21,6 +21,3 @@ def findStartUps(collection):
     print(pd.DataFrame(pd.DataFrame(dict_countrycity)["city"].value_counts()).head())
 
 
-c = collectionCompanies("companies")
-findStartUps(c)
-
